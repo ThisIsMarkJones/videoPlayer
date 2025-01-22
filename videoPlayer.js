@@ -6,17 +6,21 @@ export default class VideoPlayer extends LightningElement {
     @api fieldApiName; // Field API name containing the video URL
     @api title; // Title of the video player, now configurable
 
-    videoUrl;
-    embedUrl;
-    errorMessage;
+    videoUrl; // The resolved video URL
+    embedUrl; // The embeddable video URL
+    errorMessage; // Error message to display to users
 
     @wire(getRecord, { recordId: '$recordId', fields: '$resolvedField' })
     wiredRecord({ error, data }) {
         if (data) {
             try {
                 const fieldName = this.fieldApiName.split('.')[1]; // Extract Field API Name
-                this.videoUrl = data.fields[fieldName]?.value; // Safely access the field value
+                const fieldValue = data.fields[fieldName]?.value; // Safely access the field value
+
+                // Assign the video URL (supports both Text and URL fields)
+                this.videoUrl = fieldValue ? fieldValue.toString() : null;
                 this.processVideoUrl();
+
                 this.errorMessage = null; // Clear previous errors
             } catch (e) {
                 this.errorMessage = 'Error retrieving video URL: Invalid field API name.';
@@ -37,7 +41,7 @@ export default class VideoPlayer extends LightningElement {
         if (this.videoUrl && (this.videoUrl.includes('youtube.com') || this.videoUrl.includes('youtu.be'))) {
             this.embedUrl = this.getYouTubeEmbedUrl(this.videoUrl);
         } else {
-            this.embedUrl = null; // Use video tag for non-YouTube URLs
+            this.embedUrl = null; // Handle invalid or non-YouTube URLs
         }
     }
 
@@ -48,7 +52,7 @@ export default class VideoPlayer extends LightningElement {
                 : new URL(url).searchParams.get('v');
             return `https://www.youtube.com/embed/${videoId}`;
         } catch (e) {
-            console.error('Invalid YouTube URL', e);
+            console.error('Invalid YouTube URL:', e);
             return null;
         }
     }
