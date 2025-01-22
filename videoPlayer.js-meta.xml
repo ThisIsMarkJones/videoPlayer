@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata"
+                          fqn="videoPlayer">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="fieldApiName" type="String" label="Field API Name" description="API name of the URL field containing the video link"/>
+            <property name="title" type="String" label="Title" description="Title displayed above the video"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
