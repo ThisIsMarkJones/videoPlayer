@@ -1,0 +1,31 @@
+<template>
+    <div class="slds-col_padded-around-medium video-container">
+        <template if:true={title}>
+            <h2 class="slds-var-m-bottom_medium slds-text-align_center video-title">{title}</h2>
+        </template>
+        <template if:true={embedUrl}>
+            <!-- Render YouTube video -->
+            <iframe class="slds-media_responsive slds-container_fluid"
+                src={embedUrl}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </template>
+        <template if:false={embedUrl}>
+            <!-- Render direct video -->
+            <template if:true={videoUrl}>
+                <video class="slds-media_responsive slds-container_fluid" controls>
+                    <source src={videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </template>
+            <template if:false={videoUrl}>
+                <p>No video available. Ensure the field contains a valid video URL.</p>
+            </template>
+        </template>
+        <template if:true={errorMessage}>
+            <p>{errorMessage}</p>
+        </template>
+    </div>
+</template>
