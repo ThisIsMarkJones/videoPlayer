@@ -76,7 +76,7 @@ The component includes the following styles:
 
 ## Example Configurations 
 | **Marker** || **Standard Object Configuration** | **Custom Object Configuration** |
-| --------------------------- | ------------------------- |
+| ---------- | --------------------------- | ------------------------- |
 | **Object** | Contact | **Object** | `CustomObject__c` |
 | **Field** | `Video_URL__c` | **Field** | `Test_Video_URL__c` |
 | **`Field API Name`** | `Contact.Video_URL__c` | **`Field API Name`** | `CustomObject__c.Test_Video_URL__c |
