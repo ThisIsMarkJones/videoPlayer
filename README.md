@@ -1,4 +1,4 @@
-# VideoPlayer LWC
+# YouTube VideoPlayer
 
 ## Overview
 The **VideoPlayer** Lightning Web Component (LWC) is designed for Salesforce Lightning Record Pages. It dynamically retrieves a YouTube video URL from a specified field on the record and displays it in an embeddable player. This component supports:
