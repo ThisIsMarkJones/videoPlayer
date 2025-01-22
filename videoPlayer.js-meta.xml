@@ -8,8 +8,8 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
-            <property name="fieldApiName" type="String" label="Field API Name" description="API name of the URL field containing the video link"/>
-            <property name="title" type="String" label="Title" description="Title displayed above the video"/>
+            <property name="fieldApiName" type="String" label="Field API Name" description="API name of the URL field containing the video link. Please use the full API e.g. ObjectAPIName.FieldAPIName."/>
+            <property name="title" type="String" label="Title" description="Title displayed above the video."/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
