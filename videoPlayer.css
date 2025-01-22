@@ -1,0 +1,31 @@
+.video-container {
+    background-color: #ffffff; /* Solid white background */
+    padding: 1rem; /* Slim margin around the video */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for better visuals */
+    max-width: 800px; /* Constrain max width */
+    margin: auto; /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    position: relative; /* Ensure proper layout for video and title */
+    aspect-ratio: 1.5 /* Enforce square aspect ratio */
+}
+
+.video-title {
+    text-align: left; /* Left align the title */
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Add a bit of spacing below the title */
+    flex-shrink: 0; /* Ensure the title stays at the top */
+}
+
+.video-container iframe,
+.video-container video {
+    width: 100%; /* Make video fill the width */
+    height: 100%; /* Ensure it fills the height */
+    flex-grow: 1; /* Let the video take up remaining space */
+    border: none; /* Remove border around video */
+    object-fit: contain; /* Maintain video proportions */
+}
