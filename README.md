@@ -77,9 +77,9 @@ The component includes the following styles:
 ## Example Configurations 
 | **Standard Object Example** | **Custom Object Example** |
 | --------------------------- | ------------------------- |
-| Object: Contact | Object: `CustomObject__c` |
-| Field: `Video_URL__c` | Field: `Test_Video_URL__c` |
-| `Field API Name`: `Contact.Video_URL__c` | `Field API Name`: `CustomObject__c.Test_Video_URL__c |
+| **Object** | Contact | **Object** | `CustomObject__c` |
+| **Field** | `Video_URL__c` | **Field** | `Test_Video_URL__c` |
+| **`Field API Name`** | `Contact.Video_URL__c` | **`Field API Name`** | `CustomObject__c.Test_Video_URL__c |
 
 ---
 
