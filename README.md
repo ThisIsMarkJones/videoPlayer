@@ -79,7 +79,7 @@ The component includes the following styles:
 | ---------- | --------------------------- | ------------------------- |
 | **Object** | Contact | `CustomObject__c` |
 | **Field** | `Video_URL__c` | `Test_Video_URL__c` |
-| **`Field API Name`** | `Contact.Video_URL__c` | `CustomObject__c.Test_Video_URL__c |
+| **`Field API Name`** | `Contact.Video_URL__c` | `CustomObject__c.Test_Video_URL__c` |
 
 ---
 
